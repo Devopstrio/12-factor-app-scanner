@@ -35,7 +35,7 @@ sequenceDiagram
     Dev->>Engine: Run scan (./target-repo)
     Engine->>Engine: Initialize Context (Language Detection)
     
-    rect rgb(82, 44, 114)
+    rect rgba(82, 44, 114, 0.18)
     Note over Engine, Rules: Factor Check Execution
     Engine->>Rules: Trigger: Dependencies (Factor II)
     Rules-->>Engine: Status: PASS (manifest.json found)

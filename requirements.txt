@@ -1,0 +1,4 @@
+# Devopstrio 12-Factor Scanner Dependencies
+gitpython==3.1.37
+jsonschema==4.19.1
+pyyaml==6.0.1

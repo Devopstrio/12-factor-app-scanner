@@ -1,0 +1,16 @@
+{
+    "name": "devopstrio-12-factor-scanner",
+    "version": "2.1.0",
+    "description": "Enterprise-grade 12-factor compliance scanner by Devopstrio.",
+    "main": "src/scanner.py",
+    "author": "Devopstrio",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Devopstrio/12-factor-app-scanner.git"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "prettier": "^3.0.0"
+    }
+}
