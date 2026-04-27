@@ -2,29 +2,79 @@
 
 <img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="72" alt="Devopstrio Logo" />
 
-<h1>Devopstrio</h1>
+<h1>12-Factor App Scanner</h1>
 
-<p><strong>Enterprise Cloud &nbsp;&middot;&nbsp; AI &nbsp;&middot;&nbsp; DevOps Acceleration</strong></p>
+<p><strong>Automated Cloud-Native Compliance &middot; Enterprise SaaS Governance</strong></p>
 
-[![Website](https://img.shields.io/badge/Website-devopstrio.co.uk-522c72?style=for-the-badge&labelColor=0d0d0d)](https://devopstrio.co.uk/)
-  <a href="https://github.com/orgs/devopstrio/repositories"><img src="https://img.shields.io/badge/Repos-180+_Public-962964?style=for-the-badge&labelColor=0d0d0d" alt="Repos"/></a>
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-ce2453?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d0d0d)](https://www.linkedin.com/company/devopstrioglobal/)
-[![Email](https://img.shields.io/badge/Email-Contact_Us-e79e57?style=for-the-badge&logo=gmail&logoColor=white&labelColor=0d0d0d)](mailto:info@devopstrioglobal.com)
-[![Company Profile](https://img.shields.io/badge/Company_Profile-Download_PDF-dd5c54?style=for-the-badge&labelColor=0d0d0d)](https://github.com/Devopstrio/.github/raw/main/assets/COMPANY_PROFILE.pdf)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge&labelColor=111)](LICENSE)
+[![IaC](https://img.shields.io/badge/IaC-Terraform-7b42bc?style=for-the-badge&logo=terraform&labelColor=111)](/terraform)
+[![Language](https://img.shields.io/badge/Engine-Python_3.11-3776ab?style=for-the-badge&logo=python&labelColor=111)](/src)
 
 <br/>
 
-> **Building the future of enterprise infrastructure &mdash; one blueprint at a time.**
-> 
-> 180+ open-source accelerators &nbsp;&middot;&nbsp; 15 technology domains &nbsp;&middot;&nbsp; 3 cloud providers &nbsp;&middot;&nbsp; 100% production-grade
+> **Is your application truly cloud-native?** The 12-Factor App Scanner provides automated static analysis to verify compliance with the 12-factor methodology, ensuring scalability, disposability, and dev/prod parity.
 
 </div>
 
 ---
-# 12-FACTOR-APP-SCANNER
 
-Performance-grade landing zone for enterprise infrastructure.
+## 🏗️ High-Level Architecture
 
-&copy; 2026 Devopstrio
+The scanner operates as a **Compliance-as-Code** engine that injects into the "Shift-Left" security and governance phase.
 
+```mermaid
+graph TD
+    A[Codebase / Git URL] --> B{Scanner Engine}
+    B --> C[Rule: Stateless Processes]
+    B --> D[Rule: Config via Environment]
+    B --> E[Rule: Disposability]
+    C & D & E --> F[Compliance Aggregator]
+    F --> G[JSON / Markdown Report]
+    F --> H[CI/CD Build Break/Pass]
+```
 
+### Key Components
+- **Identity & Context Engine**: Analyzes project metadata to determine technology stack (Node, Go, Python, .NET).
+- **Factor Checkers**: 12 modular plugins, each dedicated to a specific factor.
+- **Remediation Database**: Mapping of failures to Devopstrio Landing Zone accelerators to fix issues immediately.
+
+---
+
+## 🚀 12-Factor Coverage
+
+| Factor | Analysis Strategy | Implementation |
+|:---|:---|:---|
+| **I. Codebase** | Git repository verification and multi-deployment tracking. | Core Engine |
+| **II. Dependencies** | Manifest scanning (npm, pip, nuget) for strict isolation. | Dependency Plugin |
+| **III. Config** | Environment variable detection & secret-leak prevention. | Config Plugin |
+| **IV. Backing Services** | Resource mapping and stateless connection evaluation. | Resource Plugin |
+| **V. Build, Release, Run** | Pipeline stage separation and artifact immutability. | CI/CD Plugin |
+| **XI. Logs** | Verification of standard output streaming vs file-writing. | Observability Plugin |
+
+---
+
+## 🛠️ Getting Started
+
+### Prerequisites
+- Python 3.11+
+- Terraform (for cloud deployment)
+
+### CLI Usage
+```bash
+# Install the scanner
+pip install devopstrio-12factor-scanner
+
+# Scan a local project
+12factor-scan ./services/my-app --report-format=html
+```
+
+---
+
+## ☁️ Infrastructure-as-Code
+
+The scanner is designed to run as a serverless endpoint. The `/terraform` directory provides:
+- **Azure**: Function App with Key Vault and App Insights.
+- **AWS**: Lambda with API Gateway and CloudWatch.
+
+---
+<sub>&copy; 2026 Devopstrio &mdash; Enterprise Cloud &middot; AI &middot; DevOps Acceleration Partner</sub>
