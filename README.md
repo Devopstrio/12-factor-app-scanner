@@ -24,7 +24,7 @@
 
 ## 📋 Executive Summary
 
-![12-Factor App Scanner Architecture](assets/diagram.png)
+![12-Factor App Scanner Architecture](assets/architecture.png)
 
 ### The Problem
 Modern enterprise cloud environments demand extreme scalability, disposability, and dev/prod parity. However, manual architecture reviews are slow, inconsistent, and fail to scale with rapid delivery cycles.
