@@ -1,0 +1,33 @@
+name: Devopstrio 12-Factor Audit
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run 12-Factor Scanner
+        run: |
+          python src/scanner.py . > audit-report.json
+          cat audit-report.json
+
+      - name: Verify Compliance Threshold
+        run: |
+          # Example: Fail build if score is below 70
+          SCORE=$(cat audit-report.json | jq '.compliance_score')
+          if [ "$SCORE" -lt 70 ]; then
+            echo "❌ Compliance Score ($SCORE) is below threshold (70)!"
+            exit 1
+          fi
+          echo "✅ Compliance Score: $SCORE"
